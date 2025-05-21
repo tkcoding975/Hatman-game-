@@ -48,6 +48,9 @@ public class GuessTracker {
 
 
     public static void main(String [] args) {
+       String[] words = {"apple", "Orange", "pear"};
+Random random = new Random();
+String pickedWord = words[random.nextInt(words.length)];
         GuessTracker guessTracker = new GuessTracker(5, "apple","Orange","pear");
         Scanner scanner = new Scanner(System.in);
        while (guessTracker.guessesLeft > 0) {
