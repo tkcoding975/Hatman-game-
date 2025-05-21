@@ -48,7 +48,7 @@ public class GuessTracker {
 
 
     public static void main(String [] args) {
-       String[] words = {"apple", "Orange", "pear"};
+       String[] words = {"bee", "apple", "banana", "cat", "dog", "elephant", "fish", "grape", "hat", "igloo", "jacket", "kite", "lemon", "monkey", "notebook", "orange", "penguin", "quilt", "rabbit", "snake", "tiger"};
 Random random = new Random();
 String pickedWord = words[random.nextInt(words.length)];
         GuessTracker guessTracker = new GuessTracker(5, pickedWord);
@@ -74,7 +74,9 @@ String pickedWord = words[random.nextInt(words.length)];
             break;
         }    
     }
-    
+    if (!allGuessed) {
+        System.out.println("You lost! The word was: " + guessTracker.wordToGuess);
+    }
             
         }
     
