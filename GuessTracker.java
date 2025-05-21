@@ -48,7 +48,7 @@ public class GuessTracker {
 
 
     public static void main(String [] args) {
-        GuessTracker guessTracker = new GuessTracker(5, "apple");
+        GuessTracker guessTracker = new GuessTracker(5, tracker.pickedWord);
         Scanner scanner = new Scanner(System.in);
        while (guessTracker.guessesLeft > 0) {
         System.out.println("You have " + guessTracker.guessesLeft + " guesses left.");
