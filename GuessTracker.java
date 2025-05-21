@@ -2,6 +2,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Enumeration;
 import java.util.Scanner;
+import java.util.Random;
 // This class is responsible for keeping
 // track of the following pieces of data:
 // 1. how many guesses you got left
