@@ -48,32 +48,35 @@ public class GuessTracker {
 
 
     public static void main(String [] args) {
-       String[] words = {"bee", "apple", "banana", "cat", "dog", "elephant", "fish", "grape", "hat", "igloo", "jacket", "kite", "lemon", "monkey", "notebook", "orange", "penguin", "quilt", "rabbit", "snake", "tiger"};
+       String[] words = {"bee", "apple", "banana", "cat", "dog", "elephant", "fish", "grape", "hat", "igloo", "jacket", "kite", "lemon", "monkey", "notebook", "orange", "penguin", "quilt", "rabbit", "snake", "tiger", "College" , "University", "School", "Student", "Teacher", "Classroom", "Library", "Book", "Computer", "Internet", "Technology", "Science", "Math", "History", "Geography", "Art", "Music", "Sports", "Health"};
+        // Pick a random word from the list
 Random random = new Random();
 String pickedWord = words[random.nextInt(words.length)];
         GuessTracker guessTracker = new GuessTracker(5, pickedWord);
        
         Scanner scanner = new Scanner(System.in);
+        boolean allGuessed = false;
        while (guessTracker.guessesLeft > 0) {
         System.out.println("You have " + guessTracker.guessesLeft + " guesses left.");
         System.out.println("Guess a letter");
         String letter = scanner.nextLine();
 
           guessTracker.guessLetter(letter);
-         boolean allGuessed = true;
+          allGuessed = true;
         Enumeration<String> keys = guessTracker.letterGuessedCorrectly.keys();
         while (keys.hasMoreElements()) {
             String key = keys.nextElement();
+            
             if (!guessTracker.letterGuessedCorrectly.get(key)) {
                 allGuessed = false;
                 break;
-       }
+           }
         }
         if (allGuessed) {
             System.out.println("You have guessed all the letters correctly! The word was: " + guessTracker.wordToGuess);
             break;
         }    
-    }
+       }
     if (!allGuessed) {
         System.out.println("You lost! The word was: " + guessTracker.wordToGuess);
     }
@@ -105,4 +108,3 @@ String pickedWord = words[random.nextInt(words.length)];
         // while (k.hasMoreElements) {
         //     String key = k.nextElement();
         //     letterGuessedCorrectly.get(key);
-
